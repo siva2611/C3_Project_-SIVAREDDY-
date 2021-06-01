@@ -76,4 +76,16 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void calculate_the_total_order_cost(){
+        Item item;
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",100);
+        restaurant.addToMenu("Vegetable lasagne", 200);
+        List<Item> order = new ArrayList<Item>();
+        order = restaurant.addToOrder();
+        assertNotNull(restaurant.calculateCost(order));
+
+    }
 }
